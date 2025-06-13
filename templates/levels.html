@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="icon" href="..static/images/topimg1.png">
+    <link rel="stylesheet" href="../static/registerstyle.css">
+</head>
+<body>
+    <div class="content glow" style="width: 800px; height: 500px;">
+        <div class="top-bar">
+            <img class="logo-pic" src="../static/images/logo-pic.png">
+            <img class="logo-text" src="../static/images/logo-name.png">
+            <button>Sign Out</button>
+        </div>
+        <div class="levels">
+            <img src="../static/images/easylogo.jpeg" onclick="window.location.href = 'easylevel.html'">
+            <img src="../static/images/mediumlogo.jpeg" onclick="window.location.href = 'mediumlevel.html'">
+            <img src="../static/images/hardlogo.jpeg" onclick="window.location.href = 'hardlevel.html'">
+            <img style="width: 85px; height: 50px;" class="hover-pic" src="../static/images/easypic.jpeg" onclick="window.location.href = './easylevel.html'">
+            <img style="width: 120px; height: 50px;" class="hover-pic" src="../static/images/mediumpic.jpeg" onclick="window.location.href = './mediumlevel.html'">
+            <img style="width: 85px; height: 50px;" class="hover-pic" src="../static/images/hardpic.jpeg" onclick="window.location.href = './hardlevel.html'">
+        </div>
+    </div>
+
+    <script>
+        var signout = document.querySelector(".top-bar button")
+        signout.addEventListener("click", function(){
+            window.location.href = "loginpg.html"
+        })
+    </script>
+</body>
+</html>
+/*yI4uyLfy7msyUFj9

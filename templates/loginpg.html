@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="icon" href="../static/images/topimg1.png">
+    <link rel="stylesheet" href="../static/registerstyle.css">
+</head>
+<body>
+    <div class="content glow" style="width: 750px; height: 450px;">
+        <div class="top-bar">
+            <img class="logo-pic" src="../static/images/logo-pic.png">
+            <img class="logo-text" src="../static/images/logo-name.png">
+            <button onclick="window.location.href='registerpg.html'">Register</button>
+        </div>
+        <div class="input-content">
+            <input type="email" placeholder="Email">
+            <img src="../static/images/email-pic.png">
+            <input type="password" placeholder="Password">
+            <button>Login</button>
+        </div>
+    </div>
+    <script>
+        var registerbtn = document.querySelector(".top-bar button")
+        registerbtn.addEventListener("click", function() {
+            window.location.href = "registerpg.html"
+        })
+        var loginbtn = document.querySelector(".input-content button")
+        loginbtn.addEventListener("click", function(){
+            window.location.href = "levels.html"
+        })
+    </script>
+</body>
+</html>

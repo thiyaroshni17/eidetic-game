@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "open sans", sans-serif;
+}
+
+body {
+    background-color: black;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.content {
+    position: relative;
+    background: linear-gradient(0deg, black, rgb(44, 43, 43));
+
+}
+
+.glow::before,
+.glow::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background: linear-gradient(45deg, #e6fb04, #ff6600, #00ff66, #00ffff, #ff00ff, #ff0099, #6e0dd0, #ff3300, #99099fff);
+    background-size: 400%;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    z-index: -3;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.glow::after {
+    filter: blur(40px);
+    opacity: 0.8;
+}
+
+.content h3 {
+    color: gold;
+    font-style: bold;
+    font-size: 20px;
+    position: absolute;
+    padding: 30px;
+    display: inline;
+}
+
+.last-screen {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 999;
+}
+
+.last-screen div {
+    background: #fff;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    align-content: center;
+}
+
+.last-screen img {
+    max-width: 130px;
+}
+
+.last-screen h4 {
+    padding-top: 5px;
+}
+
+.top-bar {
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+    grid-auto-rows: 120px;
+}
+
+.top-bar button {
+    justify-self: center;
+}
+
+.logo-pic {
+    width: 155px;
+    height: 170px;
+    justify-self: end;
+}
+
+.logo-text {
+    width: 400px;
+    height: 120px;
+    position: relative;
+    right: 120px;
+}
+
+.content button, .last-screen div button  {
+    width: 180px;
+    height: 45px;
+    color: rgb(255, 0, 0);
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: larger;
+    align-self: center;
+    animation: glow-border 1.5s infinite alternate;
+}
+
+.input-content {
+    display: grid;
+    grid-template-columns: 350px 20px;
+    row-gap: 30px;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.input-content img {
+    height: 35px;
+    width: 45px;
+    position: relative;
+    right: 55px;
+    align-self: center;
+}
+
+.input-content input {
+    width: 350px;
+    height: 45px;
+    border-radius: 25px;
+    background-color: grey;
+    outline: none;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+}
+
+.input-content input::placeholder {
+    color: white;
+    font-size: 20px;
+    padding-left: 20px;
+    opacity: 0.6;
+}
+
+.input-content button, .last-screen div button {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 215px;
+    height: 55px;
+    color: rgb(255, 0, 0);
+    animation: glow-border 1.5 infinite alternate;
+}
+
+.last-screen div button {
+    width: 150px;
+    height: 35px;
+    margin-top: 10px;
+}
+
+@keyframes glow-border {
+    from {
+        border-color: transparent;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    }
+
+    to {
+        border-color: rgb(238, 6, 6);
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+    }
+}
+
+
+.levels {
+    display: grid;
+    column-gap: 65px;
+    row-gap: 10px;
+    justify-content: center;
+    margin-top: 65px;
+    grid-template-columns: repeat(3, 160px);
+}
+
+.levels img {
+    height: 150px;
+    width: 160px;
+    transition: 0.17s all;
+    justify-self: center;
+}
+
+.levels img:hover {
+    position: relative;
+    width: calc(100% + 2px);
+    bottom: 5px;
+}
+
+.checklevel {
+    color: transparent;
+    cursor: default;
+}
+
+.total-cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 110px);
+    gap: 30px 40px;
+    justify-content: center;
+}
+
+.thecards {
+    position: relative;
+    height: 150px;
+    width: 107px;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    transition: 1s all ease;
+}
+
+.thefront {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius: 16px;
+    border: 1px solid gold;
+}
+
+.theback {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid gold;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.theback img {
+    margin-top: 35px;
+    height: 84px;
+    width: 104px;
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+.matched {
+    visibility: hidden;
+}
